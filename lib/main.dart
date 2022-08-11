@@ -34,9 +34,48 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          tooltip: "Back",
+          onPressed: () {
+            debugPrint("Back icon clicked");
+          },
+          icon: const Icon(Icons.arrow_back),
+        ),
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            tooltip: "Alarm",
+            onPressed: () {
+              debugPrint("1st action clicked");
+            },
+            icon: const Icon(Icons.access_alarm),
+          ),
+          IconButton(
+            tooltip: "Profile",
+            onPressed: () {
+              debugPrint("2nd action clicked");
+            },
+            icon: const Icon(Icons.account_circle),
+          ),
+          IconButton(
+            tooltip: "Bluetooth",
+            onPressed: () {
+              debugPrint("3rd action clicked");
+            },
+            icon: const Icon(Icons.bluetooth),
+          ),
+          IconButton(
+            tooltip: "Balance",
+            onPressed: () {
+              debugPrint("4th action clicked");
+            },
+            icon: const Icon(Icons.account_balance_rounded),
+          ),
+        ],
       ),
-      body: Center(),
+      body: const Center(
+        child: Text("Hello World!"),
+      ),
     );
   }
 }
